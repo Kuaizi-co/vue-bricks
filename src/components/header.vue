@@ -1,6 +1,6 @@
 <template>
   <header class="ex-header">
-    <h1 class="ex-header-logo">vue-bricks</h1>
+    <h1 class="ex-header-logo">{{ config.name }}</h1>
     <sub>v{{ config.version }}</sub>
     <aside>
       <a href="https://www.kuaizi.co">by 筷子科技</a>
@@ -22,9 +22,6 @@
       return {
         config
       }
-    },
-    created () {
-      console.log(config)
     }
   }
 </script>

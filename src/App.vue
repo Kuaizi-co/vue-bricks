@@ -142,6 +142,9 @@ a {
   max-width: 100%;
   max-height: 100%;
 }
+.card:hover {
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .15);
+}
 .loading {
   position: fixed;
   bottom: 1rem;
