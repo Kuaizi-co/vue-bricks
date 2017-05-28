@@ -1,7 +1,7 @@
 {
   "name": "vue-bricks",
   "description": "bricks.js for vue 2.x,the component about waterfall layout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "tomieric <tomieric@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
@@ -12,14 +12,18 @@
   },
   "files": [
     "dist/*",
+    "src/components/bricks.vue",
+    "src/lib/scroll-emitter.js",
     "README.MD"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kuaizi-co/vue-bricks.git"
   },
+  "dependencies": {
+    "bricks.js": "^1.8.0"
+  },
   "devDependencies": {
-    "bricks.js": "^1.8.0",
     "vue": "^2.3.3",
     "copy-webpack-plugin": "^4.0.1",
     "gh-pages": "^1.0.0",
