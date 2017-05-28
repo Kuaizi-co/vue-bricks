@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+src/
+vue-bricks/
+npm-debug.log
+yarn-error.log
