@@ -1,7 +1,7 @@
 {
   "name": "vue-bricks",
   "description": "bricks.js for vue 2.x,the component about waterfall layout",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "tomieric <tomieric@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
@@ -25,15 +25,16 @@
     "bricks.js": "^1.8.0"
   },
   "devDependencies": {
-    "vue": "^2.3.3",
-    "copy-webpack-plugin": "^4.0.1",
-    "gh-pages": "^1.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-preset-env": "^1.5.1",
+    "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
+    "gh-pages": "^1.0.0",
+    "vue": "^2.3.3",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",

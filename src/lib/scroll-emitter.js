@@ -4,6 +4,7 @@
  * @export
  * @class ScrollEmitter
  */
+let scrollFn = () => {}
 export default class ScrollEmitter {
   constructor (el, props) {
     this.$el = el || window
@@ -12,17 +13,23 @@ export default class ScrollEmitter {
     }, props)
     this._eventList = []
     this._initEvent()
+    this.lazyResolve = false
   }
   _initEvent () {
-    const scrollFn = () => this.calcReach()
+    scrollFn = () => this._raqScroll()
     this.$el.addEventListener('scroll', scrollFn, false)
   }
+  _raqScroll () {
+    window.requestAnimationFrame(() => this.calcReach())
+  }
   calcReach () {
+    if (this.lazyResolve) return
     let el = this.$el === window ? (document.body || document.documentElement) : this.$el
     const scrollHeight = el.scrollHeight
     const scrollTop = el.scrollTop
     const viewHeight = window.innerHeight
     if (scrollTop + viewHeight + this.props.offset >= scrollHeight) {
+      this.lazyResolve = true
       this.fire()
     }
   }
@@ -45,11 +52,13 @@ export default class ScrollEmitter {
     let eventList = this._eventList
     if (name) eventList = eventList.some(item => item.name === name)
     eventList.forEach(item => {
-              item.list.forEach(fn => fn())
-            })
+                      item.list.forEach(fn => fn())
+                    })
+  }
+  lazyDone () {
+    this.lazyResolve = false
   }
   destroy () {
-    const scrollFn = () => this.calcReach()
     this.$el.removeEventListener('scroll', scrollFn, false)
   }
 }

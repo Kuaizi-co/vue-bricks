@@ -53,6 +53,8 @@
           ? this.packLayout()
           : this.updateLayout()
         this.len = items.length
+        // lazy Done
+        this.scrollEmitter.lazyDone()
       },
       sizes (sizes) {
         this.updateLayout()
@@ -133,6 +135,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
+    z-index: 1;
     /*position: fixed;
     bottom: 0;
     left: 50%;*/
