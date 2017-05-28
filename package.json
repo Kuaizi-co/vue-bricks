@@ -1,7 +1,7 @@
 {
   "name": "vue-bricks",
   "description": "bricks.js for vue 2.x,the component about waterfall layout",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "tomieric <tomieric@gmail.com>",
   "main": "dist/index.js",
   "scripts": {

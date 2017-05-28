@@ -133,17 +133,19 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    opacity: 0;
     /*position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translate3d(-50%, 100%, 0);*/
-    transition: all .5s cubic-bezier(.55,0,.1,1);
+    left: 50%;*/
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+    transition: transform .5s cubic-bezier(.55,0,.1,1), visibility .1s, opacity .8s cubic-bezier(.55,0,.1,1) .3s, top .6s;
   }
   .vue-bricks--item[data-packed],
   .vue-bricks--item[packed] {
     top: 0;
     left: 0;
     opacity: 1;
+    visibility: visible;
   }
 </style>
