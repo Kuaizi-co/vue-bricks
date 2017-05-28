@@ -1,8 +1,11 @@
 # vue-bricks
 
-> bricks.js for vue 2.x.waterfall component
+> bricks.js for vue 2.x waterfall component
 
-Thanks for [brick.js](https://github.com/callmecavs/bricks.js)
+Thanks for 
+
+* [brick.js](https://github.com/callmecavs/bricks.js)
+* [vue-waterfall](https://github.com/Kuaizi-co/vue-waterfall)
 
 ## Install
 
@@ -24,7 +27,8 @@ import Bricks from 'vue-bricks'
     :data="waterfallData" 
     :sizes="waterfallSizes"
     @reach="addItem"
-    @pack="pack"
+    @update="done"
+    @pack="done"
 >
     <template scope="scope">
       <div class="card">
@@ -72,7 +76,7 @@ export default {
       const data = itemFactory.get(30)
       this.waterfallData = this.waterfallData.concat(data)
     },
-    pack () {
+    done () {
       this.loading = false
     },
     addItem () {
