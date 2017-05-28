@@ -33,6 +33,7 @@ import Bricks from 'vue-bricks'
     ref="bricks"
     :data="waterfallData" 
     :sizes="waterfallSizes"
+    :offset="100"
     @reach="addItem"
     @update="done"
     @pack="done"

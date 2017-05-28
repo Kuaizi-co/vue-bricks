@@ -26,11 +26,12 @@
       }
     },
     mounted () {
-      window.addEventListener('scroll', () => {
+      const scrollFn = () => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
         const height = this.$el.clientHeight
         this.fixed = scrollTop > height
-      }, false)
+      }
+      window.addEventListener('scroll', () => window.requestAnimationFrame(scrollFn), false)
     }
   }
 </script>

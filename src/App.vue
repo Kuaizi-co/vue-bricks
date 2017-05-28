@@ -6,6 +6,7 @@
         ref="bricks"
         :data="waterfallData" 
         :sizes="waterfallSizes"
+        :offset="100"
         @reach="addItem"
         @update="done"
         @pack="done"
@@ -52,7 +53,6 @@ export default {
   data () {
     const waterfallData = itemFactory.get(30)
     return {
-      msg: 'Welcome to Your Vue.js App',
       loading: true,
       waterfallData,
       waterfallSizes: [
