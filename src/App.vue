@@ -28,7 +28,7 @@
         <data-loader>Loading</data-loader>
       </div>
       <a href="#" class="go-top">
-        TOP
+        <svg class="icon" style="width: 2rem; height: 2rem;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2091"><path d="M812 742.6l-300-172.8-300 172.8 300-604L812 742.6zM264.5 686.8l247.5-142.5 247.5 142.5L512 188.5 264.5 686.8zM371.7 757.7l0 126.2-15.9 0 0-126.2-45.9 0L309.9 743l107.4 0 0 14.8L371.7 757.8zM506.6 741.5c26.6 0 43.3 3.9 50 11.7 6.7 7.8 10 27.2 10 58.3 0 33.5-3.2 54.2-9.6 62-6.4 7.8-23.2 11.8-50.4 11.8-27 0-43.8-3.9-50.3-11.7-6.5-7.8-9.8-27.9-9.8-60.3l0-9.9 0.2-13.3c0-18.7 4.2-31.5 12.6-38.4C467.8 745 483.5 741.5 506.6 741.5zM506.5 755c-22.3 0-35.3 2.5-39.1 7.4-3.8 5-5.7 22-5.7 51 0 29.1 1.9 46.1 5.7 51.1 3.8 5 16.8 7.4 39.1 7.4 22.4 0 35.4-2.5 39.2-7.4 3.8-5 5.7-22 5.7-51.1l0-9.2-0.1-13.3c0-15.6-2.6-25.4-7.8-29.6S525.9 755 506.5 755zM608.4 883.9 608.4 743l59.2 0 5.4 0c15.9 0 26.7 3.1 32.5 9.2 5.8 6.1 8.7 17.6 8.7 34.4 0 16.1-3 27.1-9 32.9-6 5.9-17.3 8.8-33.9 8.8l-6.2 0.1-40.7 0 0 55.5L608.4 883.9zM624.3 814.9l37.7 0c15.8 0 25.9-1.6 30.3-4.9 4.4-3.2 6.7-10.7 6.7-22.3 0-13.6-1.5-22.2-4.5-25.9-3-3.6-10.1-5.4-21.3-5.4l-6.1-0.1-42.7 0L624.4 814.9z" p-id="2092"></path></svg>
       </a>
     </div>
   </div>
@@ -57,6 +57,8 @@ export default {
       waterfallData,
       waterfallSizes: [
         { columns: 4, gutter: 20 },
+        { mq: '414px', columns: 1, gutter: 10 },
+        { mq: '640px', columns: 1, gutter: 80 },
         { mq: '800px', columns: 2, gutter: 80 },
         { mq: '1024px', columns: 3, gutter: 15 },
         { mq: '1280px', columns: 3, gutter: 30 },
@@ -109,6 +111,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100%;
+  overflow: hidden;
 }
 
 h1, h2 {
@@ -131,6 +135,28 @@ a {
 .waterfall {
     background: #f1f4f9;
     padding: 6rem 4rem;
+}
+@media screen and (max-width: 640px) {
+  .waterfall {
+    padding: 6rem .5rem;
+  }
+  .ex-header {
+    padding: 0!important;
+  }
+  .ex-header-logo {
+    display: none;
+  }
+  .ex-header sub {
+    display: none;
+  }
+  .ex-header aside a:nth-child(3n) {
+    display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .ex-header aside a:nth-child(2n + 1) {
+    display: none;
+  }
 }
 .box {
   border: 1px solid #ccc;
@@ -158,11 +184,10 @@ a {
 }
 .go-top {
   position: fixed;
-  right: .5rem;
-  bottom: .5rem;
-  padding: .2rem .3rem;
-  background: rgba(255, 255, 255, .8);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .15)
+  right: 1rem;
+  bottom: 1rem;
+  padding: .3rem;
+  border-radius: 4px;
 }
 .go-top:hover {
   background: rgba(255, 255, 255, 1);
