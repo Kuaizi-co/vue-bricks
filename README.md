@@ -1,5 +1,12 @@
 # vue-bricks
 
+[![npm](https://img.shields.io/npm/v/vue-bricks.svg)](https://www.npmjs.com/package/vue-bricks)
+[![Travis](https://img.shields.io/travis/Kuaizi-co/vue-bricks.svg)](https://github.com/Kuaizi-co/vue-bricks)
+[![Coveralls](https://img.shields.io/coveralls/Kuaizi-co/vue-bricks.svg)](https://github.com/Kuaizi-co/vue-bricks)
+[![Github All Releases](https://img.shields.io/github/downloads/Kuaizi-co/vue-bricks/total.svg)](https://github.com/Kuaizi-co/vue-bricks)
+[![npm](https://img.shields.io/npm/dw/vue-bricks.svg)](https://github.com/Kuaizi-co/vue-bricks)
+
+
 > bricks.js for vue 2.x waterfall component
 
 Thanks for 
