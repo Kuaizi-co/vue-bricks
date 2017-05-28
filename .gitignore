@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-src/
+dist/
 vue-bricks/
 npm-debug.log
 yarn-error.log
