@@ -1,5 +1,5 @@
 <template>
-  <header class="ex-header">
+  <header class="ex-header" :class="{ fixed }">
     <h1 class="ex-header-logo">{{ config.name }}</h1>
     <sub>v{{ config.version }}</sub>
     <aside>
@@ -21,8 +21,16 @@
   export default {
     data () {
       return {
-        config
+        config,
+        fixed: false
       }
+    },
+    mounted () {
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+        const height = this.$el.clientHeight
+        this.fixed = scrollTop > height
+      }, false)
     }
   }
 </script>
@@ -41,6 +49,10 @@
     background: #2db7f5;
     box-sizing: border-box;
     color: #fff;
+    transition: background .3s;
+}
+.ex-header.fixed {
+  background: rgba(45, 183, 245, .8);
 }
 .ex-header-logo {
     padding-top: .5rem;
@@ -57,6 +69,7 @@
     -ms-flex-pack: end;
         justify-content: flex-end;
     flex: 1;
+    
 }
 .ex-header aside > a {
     margin-left: 30px;

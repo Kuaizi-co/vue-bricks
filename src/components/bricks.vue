@@ -126,7 +126,7 @@
 <style scoped>
   .vue-bricks{
     position: relative;
-    /* margin: 0 auto */
+    margin: 0 auto
   }
   .vue-bricks--item {
     float: left;
