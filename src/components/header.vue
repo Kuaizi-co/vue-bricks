@@ -56,6 +56,7 @@
     display: flex;
     -ms-flex-pack: end;
         justify-content: flex-end;
+    flex: 1;
 }
 .ex-header aside > a {
     margin-left: 30px;
