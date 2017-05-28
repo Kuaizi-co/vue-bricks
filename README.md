@@ -47,6 +47,7 @@ import Bricks from 'vue-bricks'
 
 ```
 import Bricks from './components/bricks'
+import itemFactory from './lib/item-factory'
 export default {
   name: 'app',
   components: {
@@ -148,3 +149,8 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## License
+---
+
+Released under the [MIT](LICENSE.md) License.
