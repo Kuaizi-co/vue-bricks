@@ -24,9 +24,11 @@ export default class ScrollEmitter {
   }
   calcReach () {
     if (this.lazyResolve) return
-    let el = this.$el === window ? (document.body || document.documentElement) : this.$el
-    const scrollHeight = el.scrollHeight
-    const scrollTop = el.scrollTop
+    // chrome bug
+    let isWindow = this.$el === window
+    let el = isWindow ? document.documentElement : this.$el
+    const scrollHeight = isWindow ? (el.scrollHeight || document.body.scrollHeight) : el.scrollHeight
+    const scrollTop = isWindow ? (el.scrollTop || document.body.scrollTop) : el.scrollTop
     const viewHeight = window.innerHeight
     if (scrollTop + viewHeight + this.props.offset >= scrollHeight) {
       this.lazyResolve = true

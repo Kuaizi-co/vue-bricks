@@ -1,7 +1,7 @@
 {
   "name": "vue-bricks",
   "description": "bricks.js for vue 2.x,the component about waterfall layout",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "tomieric <tomieric@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --progress --hide-modules",
     "gh-pages": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "npm run gh-pages && gh-pages -d vue-bricks",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "files": [
     "dist/*",
