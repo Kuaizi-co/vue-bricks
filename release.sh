@@ -17,6 +17,7 @@ then
 
   npm version $VERSION --message "[release] $VERSION"
 
+  git add -A
   git push origin master
   git push origin refs/tags/v$VERSION
 
