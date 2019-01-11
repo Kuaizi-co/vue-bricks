@@ -18,6 +18,7 @@ then
   npm version $VERSION --message "[release] $VERSION" --allow-same-version
 
   git add -A
+  git commit -m "[release] $VERSION"
   git push origin master
   git push origin refs/tags/v$VERSION
 
