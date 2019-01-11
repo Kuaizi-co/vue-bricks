@@ -29,6 +29,7 @@ then
     npm publish
   fi
 
+  echo "dev"
   git checkout dev
   git rebase master
   git push origin dev
