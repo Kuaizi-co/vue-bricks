@@ -15,7 +15,7 @@ then
   # lib
   npm run lib
 
-  npm version $VERSION --message "[release] $VERSION"
+  npm version $VERSION --message "[release] $VERSION" --allow-same-version
 
   git add -A
   git push origin master
