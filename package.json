@@ -1,43 +1,61 @@
 {
   "name": "vue-bricks",
-  "description": "bricks.js for vue 2.x,the component about waterfall layout",
-  "version": "1.0.7",
-  "author": "tomieric <tomieric@gmail.com>",
-  "main": "dist/index.js",
+  "version": "2.0.0-alpha",
+  "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --progress --hide-modules",
-    "gh-pages": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "deploy": "npm run gh-pages && gh-pages -d vue-bricks",
-    "prepare": "npm run build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "preview": "serve",
+    "lib": "vue-cli-service build ./src/bricks.js --target lib --dest lib --name vueBricks"
   },
+  "main": "lib/vueBricks.common.js",
   "files": [
-    "dist/*",
-    "src/components/bricks.vue",
-    "src/lib/scroll-emitter.js",
-    "README.MD"
+    "lib/*",
+    "src/bricks.js",
+    "src/lib/*",
+    "src/components/bricks.vue"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kuaizi-co/vue-bricks.git"
-  },
   "dependencies": {
-    "bricks.js": "^1.8.0"
+    "bricks.js": "^1.8.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "vue": "^2.5.21"
   },
   "devDependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-env": "^1.5.1",
-    "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "gh-pages": "^1.0.0",
-    "vue": "^2.3.3",
-    "vue-loader": "^12.1.0",
-    "vue-template-compiler": "^2.3.3",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
-  }
+    "@babel/preset-env": "^7.2.3",
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.1.0",
+    "serve": "^10.1.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

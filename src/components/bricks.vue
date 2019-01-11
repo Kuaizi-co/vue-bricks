@@ -39,7 +39,7 @@
       // the offset is near page's bottom
       offset: {
         type: Number,
-        default: _ => 0
+        default: () => 0
       }
     },
     data () {
@@ -56,22 +56,22 @@
         // lazy Done
         this.scrollEmitter.lazyDone()
       },
-      sizes (sizes) {
+      sizes () {
         this.updateLayout()
       },
-      packed (packed) {
+      packed () {
         this.updateLayout()
       },
-      position (pos) {
+      position () {
         this.updateLayout()
       }
     },
     methods: {
       updateLayout () {
-        this.$nextTick(_ => this.bricks.update())
+        this.$nextTick(() => this.bricks.update())
       },
       packLayout () {
-        this.$nextTick(_ => this.bricks.pack())
+        this.$nextTick(() => this.bricks.pack())
       },
       pack () {
         this.bricks.pack()
