@@ -7,21 +7,6 @@ git config user.name "kz-fe"
 
 if [ "$TRAVIS_TAG" ]; then
 
-  npm run lib
-
-  git add -A
-  git commit -m "[build] v$TRAVIS_TAG"
-  npm version $TRAVIS_TAG --message "[release] v$TRAVIS_TAG"
-
-  git push origin master
-
-  if [[ $TRAVIS_TAG =~ "beta" ]]
-  then
-    npm publish --tag beta
-  else
-    npm publish
-  fi
-
   # build
   npm run build
 
@@ -33,7 +18,7 @@ if [ "$TRAVIS_TAG" ]; then
 
   git init
   git add -A
-  git commit -m "[发布了] $TRAVIS_COMMIT_MSG"
+  git commit -m "[发布了] v$TRAVIS_TAG"
 
   # if you are deploying to https://<USERNAME>.github.io
   # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master

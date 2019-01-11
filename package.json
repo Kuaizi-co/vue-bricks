@@ -1,13 +1,14 @@
 {
   "name": "vue-bricks",
-  "version": "2.0.0-alpha",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "preview": "serve",
-    "lib": "vue-cli-service build ./src/bricks.js --target lib --dest lib --name vueBricks"
+    "lib": "vue-cli-service build ./src/bricks.js --target lib --dest lib --name vueBricks",
+    "release": "sh release.sh"
   },
   "main": "lib/vueBricks.common.js",
   "files": [
