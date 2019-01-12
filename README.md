@@ -164,6 +164,7 @@ packed| data-packed | String, An attribute added to the grid items after they're
 position | true | A boolean, defaulting to true, indicating that the grid items should be positioned using the top and left CSS properties. [reference](https://github.com/callmecavs/bricks.js#position)
 container| window | wrapper for bricks, the scroller
 offset | 0 | when scroll to the page bottom near `offset`, It's trigger `reach` Event
+| lazy | Boolean | If it to be set which not layout when It's initialize |
 
 ## API / Events
 

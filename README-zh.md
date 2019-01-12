@@ -162,6 +162,7 @@ export default {
 | container | 瀑布流容器node 对象 | HTMLElement | - | window |
 | packed | 已布局的子项类型 | String | - | `data-packed` |
 | offset | 贴近底部拉取数据的距离 | Number | - | 0 |
+| lazy | 懒排版，设置为`true`时初始化不会执行 pack 进行排版,针对图片未知宽高情况需要手动触发 pack 方法 | Boolean | `true`,`false` | `false` |
 
 ### Event
 
