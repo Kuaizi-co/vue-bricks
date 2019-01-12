@@ -18,6 +18,38 @@
 
 ## 使用
 
+### 全局组件
+
+```js
+// main.js
+import Vue from 'vue'
+import 'vue-bricks/lib/vueBricks.css'
+import VueBricks from 'vue-bricks'
+
+Vue.use(VueBricks)
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app')
+```
+
+> Uncaught TypeError: Cannot assign to read only property 'exports' of object '#<Object>'
+
+如果出现以上报错，需要修改 `babel`配置，可以添加`sourceType: 'unambiguous'`解决
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    '@vue/app'
+  ],
+  // here
+  sourceType: 'unambiguous'
+}
+```
+
+### 单个组件
+
 ```html
 <template>
   <div class="waterfall">

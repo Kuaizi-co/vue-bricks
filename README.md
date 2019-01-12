@@ -25,6 +25,38 @@ Thanks for
 
 ## Usage
 
+### global component
+
+```js
+// main.js
+import Vue from 'vue'
+import 'vue-bricks/lib/vueBricks.css'
+import VueBricks from 'vue-bricks'
+
+Vue.use(VueBricks)
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app')
+```
+
+> Uncaught TypeError: Cannot assign to read only property 'exports' of object '#<Object>'
+
+It's set babel config to resolve, add `sourceType: 'unambiguous'`:
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    '@vue/app'
+  ],
+  // here
+  sourceType: 'unambiguous'
+}
+```
+
+### single component
+
 ```html
 <template>
   <div class="waterfall">
