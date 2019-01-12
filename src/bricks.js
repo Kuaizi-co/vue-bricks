@@ -15,4 +15,6 @@ Bricks.install = (Vue) => {
   Vue.component(Bricks.name, Bricks)
 }
 
+Bricks.version = `${process.env.VERSION}`
+
 export default Bricks

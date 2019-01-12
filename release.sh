@@ -12,10 +12,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
 
-  # lib
-  npm run lib
-
   npm version $VERSION --message "[release] $VERSION" --allow-same-version
+
+  # lib
+  VERSION = $VERSION npm run lib
 
   git add -A
   git commit -m "[release] $VERSION"
