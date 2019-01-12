@@ -40,6 +40,11 @@
       offset: {
         type: Number,
         default: () => 0
+      },
+      // imageLazy
+      lazy: {
+        type: Boolean,
+        default: () => false
       }
     },
     data () {
@@ -75,9 +80,11 @@
       },
       pack () {
         this.bricks.pack()
+        return this
       },
       resize (flag = true) {
         this.bricks.resize(flag)
+        return this
       },
       update () {
         this.bricks.update()
@@ -108,6 +115,7 @@
       })
 
       // Initialize
+      !this.lazy &&
       this.bricks
             .resize(true)
             .pack()
@@ -125,7 +133,7 @@
   }  
 </script>
 
-<style scoped>
+<style>
   .vue-bricks{
     position: relative;
     margin: 0 auto
@@ -134,7 +142,7 @@
     float: left;
     position: absolute;
     top: 100%;
-    left: 50%;
+    /* left: 50%; */
     z-index: 1;
     /*position: fixed;
     bottom: 0;

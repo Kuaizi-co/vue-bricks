@@ -3,6 +3,9 @@
     <h1 class="ex-header-logo">{{ config.name }}</h1>
     <sub>v{{ config.version }}</sub>
     <aside>
+      <router-link to="/">Home</router-link>
+      <router-link to="/image-lazy-load">imageLazyLoad</router-link>
+      <router-link to="/ssr">SSR</router-link>
       <a href="https://www.kuaizi.ai">&copy; 筷子科技</a>
       <a href="https://github.com/Kuaizi-co/vue-bricks#vue-bricks">文档</a>
       <a href="https://github.com/Kuaizi-co/vue-bricks">
@@ -86,7 +89,8 @@
   vertical-align: middle;
 }
 .ex-header aside > a.active,
-.ex-header aside > a:hover {
+.ex-header aside > a:hover,
+.ex-header aside > a.router-link-exact-active {
     color: #fff;
     border-bottom: .2rem solid #fff;
 }
