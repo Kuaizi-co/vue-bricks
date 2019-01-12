@@ -128,7 +128,7 @@ export default {
     fetchwaterfallData (isReset) {
       return new Promise(resolve => {
         this.loading = true
-        fetc('/api/waterfall?search=girl')
+        fetch('/api/waterfall?search=girl')
           .then(data => {
             if (isReset) {
               this.waterfallData = data
