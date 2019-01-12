@@ -6,3 +6,7 @@ install:
 - npm install
 after_success:
 - sh deploy-ci.sh
+branches:
+ only:
+  - master
+  - /^tag-.*$/

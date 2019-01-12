@@ -5,6 +5,10 @@ set -e
 
 git config user.name "kz-fe"
 
+echo $TRAVIS_BRANCH
+
+echo $TRAVIS_TAG
+
 if [ "$TRAVIS_TAG" ]; then
 
   # build
