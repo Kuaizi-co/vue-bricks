@@ -15,7 +15,7 @@ then
   npm version $VERSION --message "[release] $VERSION" --allow-same-version
 
   # lib
-  VERSION = $VERSION npm run lib
+  VERSION=$VERSION npm run lib
 
   git add -A
   git commit -m "[release] $VERSION"
