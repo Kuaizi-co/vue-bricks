@@ -150,6 +150,10 @@ export default {
 </script>
 ```
 
+## imageLoaded
+
+[image loaded demo](https://github.com/Kuaizi-co/vue-bricks/blob/dev/src/components/img-lazy-load.vue#L111)
+
 ## Props
 
 Name | Default | Description
