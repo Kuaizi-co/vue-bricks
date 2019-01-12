@@ -7,7 +7,7 @@
     "lint": "vue-cli-service lint",
     "preview": "serve",
     "lib": "vue-cli-service build ./src/bricks.js --target lib --dest lib --name vueBricks",
-    "test": "npm run lit",
+    "test": "npm run lint",
     "release": "sh release.sh"
   },
   "main": "lib/vueBricks.common.js",

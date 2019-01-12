@@ -79,6 +79,14 @@ export default {
       document.documentElement.scrollTop = 0
       await this.fetchwaterfallData(true)
       this.$nextTick(() => this.$refs.bricks.pack())
+
+      // or 图片延迟加载
+      // 不知道图片大小，css 需设置图片的 max-width: 100%
+      /*imageReady(imgList)
+          .then(() => {
+            this.$refs.bricks.pack()
+          })
+      */
     },
     fetchwaterfallData (isReset) {
       return new Promise(resolve => {
