@@ -3,7 +3,8 @@
 # abort on errors
 set -e
 
-git config user.name "kz-fe"
+git config user.name "tomieric"
+git config user.email "tomieric@gmail.com"
 
 echo $TRAVIS_BRANCH
 
