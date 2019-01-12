@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const package = require('./package')
+const pkg = require('./package')
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'development' ? '/' :'/vue-bricks/',
@@ -13,7 +13,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({
-        'process.env.VERSION': JSON.stringify(package.version)
+        'process.env.VERSION': JSON.stringify(pkg.version)
       })
     ]
   }
