@@ -33,7 +33,8 @@ new Vue({
 }).$mount('#app')
 ```
 
-> Uncaught TypeError: Cannot assign to read only property 'exports' of object '#<Object>'
+> Uncaught TypeError: Cannot assign to read only property 'exports' of object '# Object'
+
 
 如果出现以上报错，需要修改 `babel`配置，可以添加`sourceType: 'unambiguous'`解决
 
