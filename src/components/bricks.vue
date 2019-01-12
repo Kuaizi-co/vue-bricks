@@ -30,7 +30,7 @@
       },
       position: {
         type: Boolean,
-        default: false
+        default: true
       },
       // scroller wrapper
       container: {
@@ -141,13 +141,13 @@
     left: 50%;*/
     visibility: hidden;
     opacity: 0;
-    transform: translate3d(-50%, 0, 0);
-    transition: transform .5s cubic-bezier(.55,0,.1,1), visibility .1s, opacity .8s cubic-bezier(.55,0,.1,1) .3s, top .6s;
+    /* transform: translate3d(-50%, 0, 0); */
+    transition: transform .5s cubic-bezier(.55,0,.1,1), top .5s cubic-bezier(.55,0,.1,1), left .5s cubic-bezier(.55,0,.1,1), visibility .1s, opacity .8s cubic-bezier(.55,0,.1,1) .3s, top .6s;
   }
   .vue-bricks--item[data-packed],
   .vue-bricks--item[packed] {
-    top: 0;
-    left: 0;
+    /* top: 0; */
+    /* left: 0; */
     opacity: 1;
     visibility: visible;
   }

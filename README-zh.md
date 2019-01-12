@@ -6,16 +6,9 @@
 [![Github All Releases](https://img.shields.io/github/downloads/Kuaizi-co/vue-bricks/total.svg)](https://github.com/Kuaizi-co/vue-bricks)
 [![npm](https://img.shields.io/npm/dw/vue-bricks.svg)](https://github.com/Kuaizi-co/vue-bricks)
 
-> bricks.js for vue 2.x waterfall component
+> 基于 `bricks.js` 封装的 `vue` 组件
 
-[中文文档](./README-zh.md)
-
-Thanks for 
-
-* [brick.js](https://github.com/callmecavs/bricks.js)
-* [vue-waterfall](https://github.com/Kuaizi-co/vue-waterfall)
-
-## Install
+## 安装
 
 ```
 > yarn add vue-bricks
@@ -23,7 +16,7 @@ Thanks for
 > npm i vue-bricks -S
 ```
 
-## Usage
+## 使用
 
 ```html
 <template>
@@ -112,56 +105,32 @@ export default {
 </script>
 ```
 
-## Props
+### Attributes
 
-Name | Default | Description
--|-|-
-data | undefined | Array, It's required
-sizes| undefined | Array, It's required, An array of objects describing the grid's properties at different breakpoints. [reference](https://github.com/callmecavs/bricks.js#sizes)
-packed| data-packed | String, An attribute added to the grid items after they're positioned within the grid. If the attribute is not prefixed with data-, it will be added.[reference](https://github.com/callmecavs/bricks.js#packed)
-position | true | A boolean, defaulting to true, indicating that the grid items should be positioned using the top and left CSS properties. [reference](https://github.com/callmecavs/bricks.js#position)
-container| window | wrapper for bricks, the scroller
-offset | 0 | when scroll to the page bottom near `offset`, It's trigger `reach` Event
+| 参数 | 描述 | 类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- |
+| data | 瀑布流卡片数据 | Array | - | -, `必填` |
+| sizes | 响应式配置 | Array | - | -, `必填` |
+| position | 位置方式，设为`true`使用top,left布局,`false` 则为`transform`| Boolean | true,false | true |
+| container | 瀑布流容器node 对象 | HTMLElement | - | window |
+| packed | 已布局的子项类型 | String | - | `data-packed` |
+| offset | 贴近底部拉取数据的距离 | Number | - | 0 |
 
-## API / Events
+### Event
 
-* `pack`
-
-  Used to pack all elements within the container.
-
-  ```
-    <bricks @pack="handlePack" />
-  ```
-
-* `update`
-
-  Used to pack elements without the packed attribute within the container.
-
-  ```
-    <bricks @update="handleUpdate" />
-  ```
-
-* `resize(size)`
-
-  Used to add or remove the resize event handler. It's recommended that you add the resize handler when you create your instance.
-
-  ```
-    <bricks @resize="handleResize" />
-  ```
-
-You can get bricks instance Object to resolve
-
-```
-this.$refs.bricks.update()
-this.$refs.bricks.pack()
-this.$refs.bricks.resize(false)
-```
+| 参数 | 描述 | 类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- |
+| pack | 重新排版后钩子函数 | Function | - | - |
+| update | 更新排版后钩子函数 | Function | - | - |
+| resize | 调整尺寸或触发钩子函数且返回新的尺寸信息 | Function(size) | - | - |
+| reach | 触底触发钩子函数 | Function | - | - |
 
 
-## Project setup
+## 开发
 
 ```
 yarn serve
 ```
+
 ---
 MIT LICENSE (c) www.kuaizi.ai
