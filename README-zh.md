@@ -146,6 +146,12 @@ export default {
 </script>
 ```
 
+## imageLoaded
+
+不知道图片宽高情况，应该等所有图片加载完成之前进行排版。
+
+[image loaded demo](https://github.com/Kuaizi-co/vue-bricks/blob/dev/src/components/img-lazy-load.vue#L111)
+
 ### Attributes
 
 | 参数 | 描述 | 类型 | 可选值 | 默认值 |
