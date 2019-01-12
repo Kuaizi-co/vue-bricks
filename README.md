@@ -13,7 +13,7 @@
 Thanks for 
 
 * [brick.js](https://github.com/callmecavs/bricks.js)
-* [vue-waterfall](https://github.com/Kuaizi-co/vue-waterfall)
+* [vue-waterfall](https://github.com/MopTym/vue-waterfall)
 
 ## Install
 
