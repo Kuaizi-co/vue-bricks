@@ -7,9 +7,9 @@ git config user.name "kz-fe"
 
 echo $TRAVIS_BRANCH
 
-echo $TRAVIS_TAG
+echo $TRAVIS_COMMIT_MSG
 
-if [ "$TRAVIS_TAG" ]; then
+if [ "$TRAVIS_COMMIT_MSG" ]; then
 
   # build
   npm run build
@@ -22,7 +22,7 @@ if [ "$TRAVIS_TAG" ]; then
 
   git init
   git add -A
-  git commit -m "[发布了] v$TRAVIS_TAG"
+  git commit -m "$TRAVIS_COMMIT_MSG"
 
   # if you are deploying to https://<USERNAME>.github.io
   # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
